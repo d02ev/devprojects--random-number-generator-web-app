@@ -1,5 +1,6 @@
 const Express = require('express');
 const BodyParser = require('body-parser');
+require('dotenv/config');
 
 const ExpressApp = new Express();
 
@@ -56,4 +57,6 @@ ExpressApp.get('/', (req, res) => {
     });
 });
 
-ExpressApp.listen(3000, () => console.log("Your App is Listening on http://localhost:3000"));
+const PORT = process.env.PORT || 3338;
+
+ExpressApp.listen(PORT);
